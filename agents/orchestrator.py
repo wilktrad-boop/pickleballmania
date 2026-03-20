@@ -37,10 +37,12 @@ from agents.agents import (  # noqa: E402
     CEOAgent,
     ContentAgent,
     DesignAgent,
+    EditorAgent,
     GrowthAgent,
     LinkingAgent,
     SEOAgent,
     StrategyAgent,
+    TechSEOAgent,
 )
 from agents.config import STATE_FILE  # noqa: E402
 from agents.amazon_scraper import fetch_and_cache_products  # noqa: E402
@@ -66,15 +68,17 @@ AGENT_MAP: dict[str, type] = {
     "strategy": StrategyAgent,
     "seo": SEOAgent,
     "content": ContentAgent,
+    "editor": EditorAgent,
     "affiliate": AffiliateAgent,
     "linking": LinkingAgent,
+    "techseo": TechSEOAgent,
     "growth": GrowthAgent,
     "design": DesignAgent,
 }
 
 # The order in which agents execute during a full cycle.
 # Design (Hugo) is excluded — he runs only via the weekly schedule or --agent design.
-PIPELINE_ORDER = ["ceo", "strategy", "seo", "content", "affiliate", "linking", "growth", "ceo"]
+PIPELINE_ORDER = ["ceo", "strategy", "seo", "content", "editor", "affiliate", "linking", "techseo", "growth", "ceo"]
 
 
 # ---------------------------------------------------------------------------
