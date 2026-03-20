@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Atkinson";
+	src: url("/fonts/atkinson-bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: "Atkinson", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.prose h2 {
+	font-size: 1.75em;
+	font-weight: 700;
+	margin-top: 2em;
+	margin-bottom: 0.75em;
+}
+.prose h3 {
+	font-size: 1.35em;
+	font-weight: 600;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+.prose p {
+	margin-bottom: 1.25em;
+	line-height: 1.8;
+}
+.prose ul, .prose ol {
+	margin-bottom: 1.25em;
+	padding-left: 1.5em;
+}
+.prose li {
+	margin-bottom: 0.5em;
+}
+.prose blockquote {
+	border-left: 4px solid #f59e0b;
+	padding: 0.5em 1em;
+	margin: 1.5em 0;
+	background: #fefce8;
+	border-radius: 0 8px 8px 0;
+}
+.prose a {
+	color: #f59e0b;
+	text-decoration: underline;
+}
+.prose a:hover {
+	color: #d97706;
+}
+.prose img {
+	border-radius: 12px;
+	margin: 1.5em 0;
+}

@@ -1,0 +1,92 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={`Equipement Pickleball | ${SITE_TITLE}`} description="Guide d'equipement pickleball : raquettes, balles, filets et accessoires." />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <h1 class="text-3xl font-bold mb-4 text-center">Guide Equipement Pickleball</h1>
+      <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        Retrouvez notre selection des meilleurs equipements de pickleball, testes et compares par notre equipe.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4 text-center">🏓</div>
+          <h3 class="text-xl font-bold mb-2 text-center">Raquettes (Paddles)</h3>
+          <p class="text-gray-600 text-sm mb-4">De la raquette debutant a la raquette competition, trouvez celle qui vous correspond.</p>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Selkirk Power Air</span>
+              <span class="text-amber-600 font-bold">199 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">JOOLA Ben Johns</span>
+              <span class="text-amber-600 font-bold">179 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Head Radical Tour</span>
+              <span class="text-amber-600 font-bold">149 EUR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4 text-center">👟</div>
+          <h3 class="text-xl font-bold mb-2 text-center">Chaussures</h3>
+          <p class="text-gray-600 text-sm mb-4">Les chaussures adaptees au pickleball pour un bon maintien et une adherence optimale.</p>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Nike Court Air Zoom</span>
+              <span class="text-amber-600 font-bold">119 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">ASICS Gel-Renma</span>
+              <span class="text-amber-600 font-bold">89 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">K-Swiss Express Light</span>
+              <span class="text-amber-600 font-bold">79 EUR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4 text-center">🎾</div>
+          <h3 class="text-xl font-bold mb-2 text-center">Balles & Filets</h3>
+          <p class="text-gray-600 text-sm mb-4">Tout le materiel pour jouer au pickleball, en interieur comme en exterieur.</p>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Franklin X-40 (x12)</span>
+              <span class="text-amber-600 font-bold">24 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Dura Fast 40 (x12)</span>
+              <span class="text-amber-600 font-bold">29 EUR</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gray-50 rounded-xl">
+              <span class="font-medium">Filet portable reglable</span>
+              <span class="text-amber-600 font-bold">89 EUR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-amber-50 rounded-2xl border border-amber-200 text-center">
+        <p class="text-sm text-amber-800">
+          En tant que Partenaire Amazon, nous realisons un benefice sur les achats remplissant les conditions requises.
+          Les prix affiches sont indicatifs et peuvent varier.
+        </p>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

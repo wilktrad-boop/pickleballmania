@@ -1,0 +1,72 @@
+---
+import { SITE_TITLE } from '../consts';
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Accueil' },
+  { href: '/blog/', label: 'Actualites' },
+  { href: '/categorie/tests/', label: 'Tests & Avis' },
+  { href: '/categorie/conseils/', label: 'Conseils' },
+  { href: '/equipement/', label: 'Equipement' },
+  { href: '/categorie/debuter/', label: 'Debuter' },
+];
+---
+
+<header class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-amber-400 hover:text-amber-300 transition-colors">
+      {SITE_TITLE}
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            currentPath === link.href
+              ? 'bg-amber-500 text-gray-900'
+              : 'text-gray-300 hover:bg-gray-800 hover:text-amber-400'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors"
+      aria-label="Menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-gray-800 border-t border-gray-700">
+    <div class="px-4 py-2 space-y-1">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+            currentPath === link.href
+              ? 'bg-amber-500 text-gray-900'
+              : 'text-gray-300 hover:bg-gray-700 hover:text-amber-400'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

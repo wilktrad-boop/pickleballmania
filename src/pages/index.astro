@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    <main>
+      <!-- Hero -->
+      <section class="bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Pickleball Mania</h1>
+          <p class="text-xl text-amber-200 mb-8">Le pickleball, sport #1 en croissance dans le monde</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/blog/" class="bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 px-8 rounded-xl transition-colors">
+              Tous les articles
+            </a>
+            <a href="/categorie/debuter/" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-xl border border-white/20 transition-colors">
+              Guide debutant
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest articles -->
+      <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Derniers articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map(post => (
+            <a href={`/blog/${post.id}/`} class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden">
+              {post.data.heroImage && (
+                <div class="aspect-video overflow-hidden">
+                  <img
+                    src={post.data.heroImage.src}
+                    alt={post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              <div class="p-5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium capitalize">
+                    {post.data.category}
+                  </span>
+                  <span class="text-xs text-gray-500">
+                    <FormattedDate date={post.data.pubDate} />
+                  </span>
+                </div>
+                <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors line-clamp-2">
+                  {post.data.title}
+                </h3>
+                <p class="text-gray-600 text-sm mt-2 line-clamp-2">{post.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Equipment section -->
+      <section class="bg-gray-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl font-bold mb-8 text-center">Equipement populaire</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 rounded-2xl p-6 text-center">
+              <div class="text-4xl mb-4">🏓</div>
+              <h3 class="text-xl font-bold mb-2 text-amber-400">Raquettes</h3>
+              <p class="text-gray-400 mb-4">Les meilleures raquettes de pickleball testees et approuvees.</p>
+              <a href="/equipement/" class="text-amber-400 hover:text-amber-300 font-medium">Voir les tests &rarr;</a>
+            </div>
+            <div class="bg-gray-800 rounded-2xl p-6 text-center">
+              <div class="text-4xl mb-4">👟</div>
+              <h3 class="text-xl font-bold mb-2 text-amber-400">Chaussures</h3>
+              <p class="text-gray-400 mb-4">Chaussures indoor et outdoor pour le pickleball.</p>
+              <a href="/equipement/" class="text-amber-400 hover:text-amber-300 font-medium">Comparer &rarr;</a>
+            </div>
+            <div class="bg-gray-800 rounded-2xl p-6 text-center">
+              <div class="text-4xl mb-4">🎾</div>
+              <h3 class="text-xl font-bold mb-2 text-amber-400">Balles & Filets</h3>
+              <p class="text-gray-400 mb-4">Tout l'equipement pour jouer au pickleball partout.</p>
+              <a href="/equipement/" class="text-amber-400 hover:text-amber-300 font-medium">Decouvrir &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="max-w-2xl mx-auto px-4 py-16 text-center">
+        <h2 class="text-2xl font-bold mb-4">Restez informe</h2>
+        <p class="text-gray-600 mb-6">Recevez les derniers articles et tests directement dans votre boite mail.</p>
+        <form class="flex flex-col sm:flex-row gap-3 justify-center">
+          <input
+            type="email"
+            placeholder="votre@email.com"
+            class="px-4 py-3 rounded-xl border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none flex-1 max-w-sm"
+          />
+          <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 px-8 rounded-xl transition-colors">
+            S'inscrire
+          </button>
+        </form>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

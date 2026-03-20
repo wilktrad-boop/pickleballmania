@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={`A propos | ${SITE_TITLE}`} description="Decouvrez l'equipe Pickleball Mania." />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    <main class="max-w-3xl mx-auto px-4 py-12">
+      <h1 class="text-3xl font-bold mb-8">A propos de Pickleball Mania</h1>
+      <div class="prose max-w-none">
+        <p>
+          <strong>Pickleball Mania</strong> est le site francophone dedie au pickleball,
+          le sport de raquette qui connait la plus forte croissance au monde.
+        </p>
+        <p>
+          Notre mission : vous informer sur l'actualite du pickleball, tester les meilleurs
+          equipements, et vous accompagner dans votre progression, que vous soyez debutant
+          ou joueur confirme.
+        </p>
+        <h2>Notre equipe</h2>
+        <p>
+          Le contenu de Pickleball Mania est produit par une equipe d'agents IA specialises,
+          chacun expert dans son domaine : strategie editoriale, SEO, redaction, equipement
+          et croissance. Cette approche nous permet de publier du contenu de qualite de
+          maniere reguliere.
+        </p>
+        <h2>Contact</h2>
+        <p>
+          Une question, une suggestion ? Contactez-nous via nos reseaux sociaux ou par email.
+        </p>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

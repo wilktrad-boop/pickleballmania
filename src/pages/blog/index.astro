@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+
+const categories = ['tous', 'actualites', 'tests', 'conseils', 'equipement', 'debuter'];
+
+const posts = (await getCollection('blog'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={`Articles | ${SITE_TITLE}`} description="Tous les articles Pickleball Mania" />
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <h1 class="text-3xl font-bold mb-8 text-center">Tous les articles</h1>
+
+      <!-- Category tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        {categories.map(cat => (
+          <a
+            href={cat === 'tous' ? '/blog/' : `/categorie/${cat}/`}
+            class={`px-4 py-2 rounded-full text-sm font-medium transition-colors capitalize ${
+              cat === 'tous'
+                ? 'bg-amber-500 text-gray-900'
+                : 'bg-gray-200 text-gray-600 hover:bg-amber-100 hover:text-amber-700'
+            }`}
+          >
+            {cat}
+          </a>
+        ))}
+      </div>
+
+      <!-- Articles grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <a href={`/blog/${post.id}/`} class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden">
+            {post.data.heroImage && (
+              <div class="aspect-video overflow-hidden">
+                <img
+                  src={post.data.heroImage.src}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            )}
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium capitalize">
+                  {post.data.category}
+                </span>
+                <span class="text-xs text-gray-500">
+                  <FormattedDate date={post.data.pubDate} />
+                </span>
+              </div>
+              <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors line-clamp-2">
+                {post.data.title}
+              </h3>
+              <p class="text-gray-600 text-sm mt-2 line-clamp-2">{post.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
