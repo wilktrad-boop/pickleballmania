@@ -82,6 +82,18 @@ Une faute est commise quand :
 4. **Communiquez** avec votre partenaire en double
 5. **Visez la kitchen adverse** pour forcer vos adversaires a jouer en levee
 
+
+### A lire aussi
+
+- [Pickleball vs Padel : quelles differences ? Le comparatif complet](/blog/pickleball-vs-padel-differences/)
+- [Les 5 meilleures raquettes de pickleball pour debutant en 2026](/blog/meilleure-raquette-pickleball-debutant-2026/)
+- [5 conseils pour ameliorer votre dink au pickleball](/blog/5-conseils-ameliorer-dink-pickleball/)
+
 ## Conclusion
 
 Le pickleball est un sport aux regles simples mais strategiquement riche. La regle des deux rebonds et la kitchen ajoutent une dimension tactique unique. Maintenant que vous connaissez les regles, il ne reste plus qu'a jouer !
+
+
+---
+
+*Cet article contient des liens d'affiliation. Si vous effectuez un achat via ces liens, nous percevons une petite commission sans cout supplementaire pour vous. Cela nous aide a maintenir ce site. Merci de votre soutien !*
