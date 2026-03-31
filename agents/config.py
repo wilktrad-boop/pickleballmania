@@ -42,8 +42,8 @@ AMAZON_BASE_URL = "https://www.amazon.fr"
 # Pour activer les emails: creer un App Password Gmail
 # https://myaccount.google.com/apppasswords
 # Puis definir les variables d'environnement ou un .env :
-NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", "")  # ton adresse Gmail
-NOTIFY_EMAIL_PASSWORD = os.environ.get("NOTIFY_EMAIL_PASSWORD", "")  # App Password
+NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", "wilktrad@gmail.com")
+NOTIFY_EMAIL_PASSWORD = os.environ.get("NOTIFY_EMAIL_PASSWORD", "hfvh wkru toou ncuq")
 NOTIFY_SMTP_SERVER = "smtp.gmail.com"
 NOTIFY_SMTP_PORT = 587
 

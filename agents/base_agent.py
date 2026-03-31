@@ -100,7 +100,7 @@ class BaseAgent(ABC):
                         text=True,
                         encoding="utf-8",
                         errors="replace",
-                        timeout=300,  # 5 minute timeout per agent call
+                        timeout=600,  # 10 minute timeout per agent call
                         env=env,
                     )
             finally:
@@ -122,7 +122,7 @@ class BaseAgent(ABC):
                 "Install it with: npm install -g @anthropic-ai/claude-code"
             )
         except subprocess.TimeoutExpired:
-            raise RuntimeError("Claude CLI timed out after 5 minutes")
+            raise RuntimeError("Claude CLI timed out after 10 minutes")
 
     # ------------------------------------------------------------------
     # Execution lifecycle
@@ -202,6 +202,10 @@ class BaseAgent(ABC):
             news_ctx = get_news_context(max_items=15)
         except Exception:
             news_ctx = "(Actualites non disponibles.)"
+
+        # Limit directives to last 4000 chars to avoid context overflow
+        if len(directives) > 4000:
+            directives = "(...tronque...)\n" + directives[-4000:]
 
         parts = [
             f"# Contexte pour {self.name} ({self.role})",
