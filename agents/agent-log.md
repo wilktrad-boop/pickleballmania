@@ -2,6 +2,19 @@
 
 ## Directives
 
+### 2026-03-31 - Directive utilisateur
+**Agent**: Utilisateur
+**Priorite**: HAUTE
+
+Correction urgente a appliquer :
+
+1. **Favicon manquant** : Le site n'a pas de favicon personnalise. Hugo (Design) doit creer ou integrer un favicon adapte au theme pickleball (format .svg et .ico dans /public/).
+
+### Taches assignees
+- [ ] Hugo (Design) : Ajouter un favicon personnalise pickleball dans public/
+
+---
+
 ---
 
 
@@ -5470,3 +5483,39 @@ Directives du CEO publiees.
 
 
 | 2026-03-30 08:39 | Orchestrateur | Cycle #4 termine (9 OK, 1 erreurs) | ERREUR |
+
+| 2026-03-30 08:39 | Deployer | Committed and pushed: cycle #4: 9 OK, 1 err | OK |
+
+| 2026-03-30 08:39 | Reporter | Rapport sauvegarde (cycle #4) - email non configure | OK |
+
+| 2026-03-30 08:39 | Hugo (Design) | Debut d'execution | EN COURS |
+
+| 2026-03-30 08:42 | Hugo (Design) | Design ameliore : src\pages\index.astro (build valide) | OK |
+
+<details><summary>Hugo (Design) - Design ameliore : src\pages\index.astro (build valide)</summary>
+
+Je vais analyser le fichier actuel et proposer une amélioration complète.
+
+## Analyse du fichier actuel
+
+**Ce qui fonctionne bien :**
+- Structure claire (Hero → Articles → Équipement → Newsletter)
+- Grid responsive 3 colonnes
+- Transitions shadow sur les cartes
+
+**Ce qui peut être amélioré :**
+- Le `body` est en `bg-gray-50` (clair) alors que le thème du site est sombre — incohérence visuelle
+- Zéro animation d'entrée sur les cartes d'articles
+- Les badges de catégories sont monochromes (tous am
+
+</details>
+
+
+| 2026-03-30 08:42 | Hugo (Design) | Execution terminee | OK |
+
+<details><summary>Hugo (Design) - Execution terminee</summary>
+
+Design ameliore : src\pages\index.astro (build valide)
+
+</details>
+

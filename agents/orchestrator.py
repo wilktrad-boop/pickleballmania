@@ -47,6 +47,7 @@ from agents.agents import (  # noqa: E402
 from agents.config import STATE_FILE  # noqa: E402
 from agents.amazon_scraper import fetch_and_cache_products  # noqa: E402
 from agents.deployer import auto_deploy  # noqa: E402
+from agents.image_generator import generate_missing_images  # noqa: E402
 from agents.reporter import report_cycle  # noqa: E402
 from agents.scraper import fetch_and_cache, get_news_context  # noqa: E402
 
@@ -163,6 +164,18 @@ async def run_daily_cycle() -> list[dict]:
     except Exception as exc:
         logger.warning("Amazon scraping failed (non-blocking): %s", exc)
         hub.log_action("Amazon Scraper", f"Erreur: {exc}", status="error")
+
+    # Step 0c: Generate missing images via Replicate
+    logger.info("-" * 40)
+    logger.info("Etape 0c : GENERATION images (Replicate)")
+    logger.info("-" * 40)
+    try:
+        img_count = generate_missing_images()
+        logger.info("Images OK: %d images generees", img_count)
+        hub.log_action("Image Generator", f"{img_count} images generees", status="ok")
+    except Exception as exc:
+        logger.warning("Image generation failed (non-blocking): %s", exc)
+        hub.log_action("Image Generator", f"Erreur: {exc}", status="error")
 
     # Increment iteration
     state = hub.get_state()

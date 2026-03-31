@@ -3,6 +3,15 @@
 import os
 from pathlib import Path
 
+# Load .env file if present (before reading os.environ)
+try:
+    from dotenv import load_dotenv
+    _env_path = Path(__file__).resolve().parent / ".env"
+    if _env_path.exists():
+        load_dotenv(_env_path)
+except ImportError:
+    pass
+
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
@@ -29,6 +38,14 @@ SITE_NAME = "Pickleball Mania"
 SITE_URL = "https://pickleballmania.fr"
 SITE_LANG = "fr"
 CATEGORIES = ["actualites", "tests", "conseils", "equipement", "debuter"]
+
+# ---------------------------------------------------------------------------
+# Amazon Affiliate
+# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Replicate (image generation)
+# ---------------------------------------------------------------------------
+REPLICATE_API_TOKEN = os.environ.get("REPLICATE_API_TOKEN", "")
 
 # ---------------------------------------------------------------------------
 # Amazon Affiliate
