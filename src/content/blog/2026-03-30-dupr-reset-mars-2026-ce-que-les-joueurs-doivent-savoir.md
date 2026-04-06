@@ -1,8 +1,9 @@
 ---
 title: "DUPR Reset mars 2026 : ce que les joueurs doivent savoir"
-description: "Le DUPR a effectué un reset global en mars 2026. Découvrez ce qui change pour votre rating, l'impact sur les tournois en France et comment vérifier votre..."
+description: "Le DUPR a effectué un reset global en mars 2026. Découvrez l'impact sur votre rating, les tournois en France et comment vérifier votre nouveau score."
 pubDate: "2026-03-30"
 category: "actualites"
+heroImage: "~/assets/blog/actualites/dupr-reset-mars-2026-ce-que-les-joueurs-doivent-sa.webp"
 tags: ["DUPR", "classement", "rating", "compétition", "France"]
 draft: false
 ---
@@ -42,7 +43,7 @@ En France, l'adoption du DUPR reste **partielle et progressive**. Quelques point
 
 Pour le contexte des compétitions professionnelles qui utilisent le DUPR, consultez notre article sur les [résultats du PPA Tour mars 2026](/blog/ppa-tour-resultats-mars-2026/).
 
-Pour mieux comprendre le cadre réglementaire global du pickleball, référez-vous à [les règles du pickleball](/blog/regles-pickleball-guide-complet/).
+Pour mieux comprendre le cadre réglementaire global du pickleball, référez-vous aux [règles du pickleball](/blog/regles-pickleball-guide-complet/).
 
 ## Comment vérifier votre nouveau score dès maintenant
 

@@ -1,6 +1,6 @@
 ---
 title: "Raquettes Proton interdites par la PPA : ce que ça change"
-description: "La PPA vient d'interdire les raquettes Proton en compétition pro. Quelles raquettes sont concernées, pourquoi cette décision et quelles alternatives pour..."
+description: "La PPA vient d'interdire les raquettes Proton en compétition pro. Quelles modèles sont concernés, pourquoi cette décision et quelles alternatives choisir ?"
 pubDate: "2026-03-30"
 category: "actualites"
 tags: ["PPA", "raquette", "réglementation", "compétition", "Proton"]
