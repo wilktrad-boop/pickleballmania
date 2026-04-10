@@ -20,5 +20,8 @@
     "astro": "^6.0.7",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "replicate": "^1.4.0"
   }
 }

@@ -1,8 +1,9 @@
 ---
 title: "5 erreurs des débutants au pickleball (et comment les corriger)"
 description: "Vous débutez au pickleball ? Ces 5 erreurs freinent 90% des nouveaux joueurs. Identifiez-les et corrigez-les dès maintenant pour progresser plus vite."
-pubDate: "2026-04-12"
+pubDate: "2026-04-06"
 category: "debuter"
+heroImage: "../../assets/blog/debuter/5-erreurs-des-debutants-au-pickleball-et-comment-l.webp"
 tags: ["débutant", "erreurs", "conseils", "progression", "technique"]
 draft: false
 ---

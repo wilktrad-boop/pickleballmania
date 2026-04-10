@@ -1,6 +1,0 @@
-# The agents use Claude Code CLI (claude -p) which runs on your Max subscription.
-# Just make sure 'claude' is in your PATH.
-
-# Web scraping for real pickleball news
-requests>=2.31.0
-beautifulsoup4>=4.12.0

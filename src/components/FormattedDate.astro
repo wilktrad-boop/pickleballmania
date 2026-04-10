@@ -4,14 +4,14 @@ interface Props {
 }
 
 const { date } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('fr-FR', {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+});
 ---
 
-<time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
+<time datetime={date.toISOString()} class="text-sm text-slate-500">
+	{formattedDate}
 </time>

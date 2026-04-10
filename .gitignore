@@ -7,10 +7,6 @@ dist/
 # dependencies
 node_modules/
 
-# python cache
-__pycache__/
-*.pyc
-
 # logs
 npm-debug.log*
 yarn-debug.log*
@@ -27,8 +23,3 @@ Thumbs.db
 
 # jetbrains setting folder
 .idea/
-
-# agent logs & cache (regenerated each cycle)
-agents/schedule.log
-agents/output/
-agents/state.json

@@ -1,8 +1,9 @@
 ---
 title: "Foam-core vs thermoform pickleball : laquelle choisir ?"
 description: "Foam-core ou thermoform : quelle technologie de raquette pickleball pour votre jeu ? Comparatif complet, avantages, inconvénients et recommandations 2026."
-pubDate: "2026-04-11"
+pubDate: "2026-04-06"
 category: "equipement"
+heroImage: "../../assets/blog/equipement/foam-core-vs-thermoform-pickleball-laquelle-choisi.webp"
 tags: ["raquette", "foam-core", "thermoform", "construction", "technologie"]
 draft: false
 ---

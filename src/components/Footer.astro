@@ -1,15 +1,15 @@
 ---
-const today = new Date();
+const year = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-900 text-gray-400 mt-16">
+<footer class="bg-slate-900 text-slate-400 mt-16">
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <!-- Brand -->
       <div>
-        <h3 class="text-amber-400 font-bold text-lg mb-3">Pickleball Mania</h3>
+        <h3 class="text-white font-bold text-lg mb-3">Pickleball Mania</h3>
         <p class="text-sm leading-relaxed">
-          Le site francophone de reference sur le pickleball. Actualites, tests, conseils et guides d'equipement.
+          Le site francophone de référence sur le pickleball. Actualités, tests, conseils et guides d'équipement.
         </p>
       </div>
 
@@ -17,11 +17,11 @@ const today = new Date();
       <div>
         <h4 class="text-white font-semibold mb-3">Navigation</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="/blog/" class="hover:text-amber-400 transition-colors">Actualites</a></li>
-          <li><a href="/categorie/tests/" class="hover:text-amber-400 transition-colors">Tests & Avis</a></li>
-          <li><a href="/categorie/conseils/" class="hover:text-amber-400 transition-colors">Conseils</a></li>
-          <li><a href="/equipement/" class="hover:text-amber-400 transition-colors">Equipement</a></li>
-          <li><a href="/categorie/debuter/" class="hover:text-amber-400 transition-colors">Debuter</a></li>
+          <li><a href="/blog/" class="hover:text-primary-400 transition-colors">Actualités</a></li>
+          <li><a href="/categorie/tests/" class="hover:text-primary-400 transition-colors">Tests & Avis</a></li>
+          <li><a href="/categorie/conseils/" class="hover:text-primary-400 transition-colors">Conseils</a></li>
+          <li><a href="/equipement/" class="hover:text-primary-400 transition-colors">Équipement</a></li>
+          <li><a href="/categorie/debuter/" class="hover:text-primary-400 transition-colors">Débuter</a></li>
         </ul>
       </div>
 
@@ -29,9 +29,9 @@ const today = new Date();
       <div>
         <h4 class="text-white font-semibold mb-3">Informations</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="/about/" class="hover:text-amber-400 transition-colors">A propos</a></li>
-          <li><a href="/mentions-legales/" class="hover:text-amber-400 transition-colors">Mentions legales</a></li>
-          <li><a href="/politique-confidentialite/" class="hover:text-amber-400 transition-colors">Confidentialite</a></li>
+          <li><a href="/about/" class="hover:text-primary-400 transition-colors">À propos</a></li>
+          <li><a href="/mentions-legales/" class="hover:text-primary-400 transition-colors">Mentions légales</a></li>
+          <li><a href="/politique-confidentialite/" class="hover:text-primary-400 transition-colors">Confidentialité</a></li>
         </ul>
       </div>
 
@@ -39,13 +39,13 @@ const today = new Date();
       <div>
         <h4 class="text-white font-semibold mb-3">Partenaire</h4>
         <p class="text-sm leading-relaxed">
-          En tant que Partenaire Amazon, nous realisons un benefice sur les achats remplissant les conditions requises.
+          En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.
         </p>
       </div>
     </div>
 
-    <div class="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-      <p>&copy; {today.getFullYear()} Pickleball Mania. Tous droits reserves.</p>
+    <div class="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
+      <p>&copy; {year} Pickleball Mania. Tous droits réservés.</p>
     </div>
   </div>
 </footer>

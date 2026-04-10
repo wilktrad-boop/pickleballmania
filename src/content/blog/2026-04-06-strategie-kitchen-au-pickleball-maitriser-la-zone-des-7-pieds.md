@@ -1,8 +1,9 @@
 ---
 title: "Stratégie kitchen au pickleball : maîtriser la zone des 7 pieds"
 description: "La zone de non-volée (kitchen) est le cœur du pickleball tactique. Maîtrisez cette zone des 7 pieds pour contrôler les échanges et gagner plus souvent."
-pubDate: "2026-04-10"
+pubDate: "2026-04-06"
 category: "conseils"
+heroImage: "../../assets/blog/conseils/strategie-kitchen-au-pickleball-maitriser-la-zone-.webp"
 tags: ["stratégie", "kitchen", "zone de non-volée", "tactique", "technique"]
 draft: false
 ---

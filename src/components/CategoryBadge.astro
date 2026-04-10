@@ -1,0 +1,21 @@
+---
+import { CATEGORIES, type CategoryKey } from '../consts';
+
+interface Props {
+  category: string;
+  linked?: boolean;
+}
+
+const { category, linked = false } = Astro.props;
+const cat = CATEGORIES[category as CategoryKey];
+const label = cat?.label ?? category;
+const colorClass = cat?.color ?? 'bg-slate-100 text-slate-700';
+const Tag = linked ? 'a' : 'span';
+---
+
+<Tag
+  {...(linked ? { href: `/categorie/${category}/` } : {})}
+  class={`inline-block text-xs px-2.5 py-1 rounded-full font-medium ${colorClass} ${linked ? 'hover:opacity-80 transition-opacity' : ''}`}
+>
+  {label}
+</Tag>

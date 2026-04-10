@@ -1,78 +1,46 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_TITLE } from '../../consts';
+import Footer from '../../components/Footer.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { SITE_TITLE, CATEGORIES, type CategoryKey } from '../../consts';
 
 export function getStaticPaths() {
-  return [
-    { params: { category: 'actualites' } },
-    { params: { category: 'tests' } },
-    { params: { category: 'conseils' } },
-    { params: { category: 'equipement' } },
-    { params: { category: 'debuter' } },
-  ];
+  return Object.keys(CATEGORIES).map(key => ({
+    params: { category: key },
+  }));
 }
 
 const { category } = Astro.params;
-
-const categoryLabels: Record<string, string> = {
-  actualites: 'Actualites',
-  tests: 'Tests & Avis',
-  conseils: 'Conseils',
-  equipement: 'Equipement',
-  debuter: 'Debuter le pickleball',
-};
+const cat = CATEGORIES[category as CategoryKey];
+const label = cat?.label ?? category;
+const description = cat?.description ?? `Articles ${label} sur Pickleball Mania`;
 
 const posts = (await getCollection('blog'))
   .filter(p => p.data.category === category && !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const label = categoryLabels[category!] || category;
 ---
 
 <!doctype html>
 <html lang="fr">
   <head>
-    <BaseHead title={`${label} | ${SITE_TITLE}`} description={`Articles ${label} sur Pickleball Mania`} />
+    <BaseHead title={`${label} | ${SITE_TITLE}`} description={description} />
   </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body class="bg-slate-50 text-slate-900">
     <Header />
     <main class="max-w-6xl mx-auto px-4 py-12">
-      <h1 class="text-3xl font-bold mb-8 text-center">{label}</h1>
+      <Breadcrumbs items={[{ label }]} />
+      <h1 class="text-3xl font-bold mb-3">{label}</h1>
+      <p class="text-slate-500 mb-10 max-w-2xl">{description}</p>
 
       {posts.length === 0 ? (
-        <p class="text-center text-gray-500 py-12">Aucun article dans cette categorie pour le moment.</p>
+        <p class="text-center text-slate-400 py-12">Aucun article dans cette catégorie pour le moment.</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map(post => (
-            <a href={`/blog/${post.id}/`} class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden">
-              {post.data.heroImage && (
-                <div class="aspect-video overflow-hidden">
-                  <img
-                    src={post.data.heroImage.src}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              )}
-              <div class="p-5">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full font-medium capitalize">
-                    {post.data.category}
-                  </span>
-                  <span class="text-xs text-gray-500">
-                    <FormattedDate date={post.data.pubDate} />
-                  </span>
-                </div>
-                <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors line-clamp-2">
-                  {post.data.title}
-                </h3>
-                <p class="text-gray-600 text-sm mt-2 line-clamp-2">{post.data.description}</p>
-              </div>
-            </a>
+            <ArticleCard post={post} />
           ))}
         </div>
       )}

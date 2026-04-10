@@ -1,8 +1,9 @@
 ---
 title: "PPA Greater Zion Cup 2026 : Haworth, ALW et les Johns au sommet"
 description: "Récap PPA Greater Zion Cup avril 2026 : Haworth décroche le #1, Anna Leigh Waters triple, Ben Johns et Gabe restent inarrêtables. Tous les résultats."
-pubDate: "2026-04-08"
+pubDate: "2026-04-06"
 category: "actualites"
+heroImage: "../../assets/blog/actualites/ppa-greater-zion-cup-2026-haworth-alw-et-les-johns.webp"
 tags: ["PPA Tour", "Greater Zion Cup", "Ben Johns", "Anna Leigh Waters", "résultats"]
 draft: false
 ---

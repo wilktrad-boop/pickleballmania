@@ -1,39 +1,42 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
 <html lang="fr">
   <head>
-    <BaseHead title={`A propos | ${SITE_TITLE}`} description="Decouvrez l'equipe Pickleball Mania." />
+    <BaseHead title={`À propos | ${SITE_TITLE}`} description="Découvrez Pickleball Mania, le site francophone dédié au pickleball." />
   </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body class="bg-slate-50 text-slate-900">
     <Header />
     <main class="max-w-3xl mx-auto px-4 py-12">
-      <h1 class="text-3xl font-bold mb-8">A propos de Pickleball Mania</h1>
+      <Breadcrumbs items={[{ label: 'À propos' }]} />
+      <h1 class="text-3xl font-bold mb-8">À propos de Pickleball Mania</h1>
       <div class="prose max-w-none">
         <p>
-          <strong>Pickleball Mania</strong> est le site francophone dedie au pickleball,
-          le sport de raquette qui connait la plus forte croissance au monde.
+          <strong>Pickleball Mania</strong> est le site francophone dédié au pickleball,
+          le sport de raquette qui connaît la plus forte croissance au monde.
         </p>
         <p>
-          Notre mission : vous informer sur l'actualite du pickleball, tester les meilleurs
-          equipements, et vous accompagner dans votre progression, que vous soyez debutant
-          ou joueur confirme.
+          Notre mission : vous informer sur l'actualité du pickleball, tester les meilleurs
+          équipements, et vous accompagner dans votre progression, que vous soyez débutant
+          ou joueur confirmé.
         </p>
-        <h2>Notre equipe</h2>
-        <p>
-          Le contenu de Pickleball Mania est produit par une equipe d'agents IA specialises,
-          chacun expert dans son domaine : strategie editoriale, SEO, redaction, equipement
-          et croissance. Cette approche nous permet de publier du contenu de qualite de
-          maniere reguliere.
-        </p>
+        <h2>Ce que vous trouverez ici</h2>
+        <ul>
+          <li><strong>Actualités</strong> : les dernières nouvelles du circuit pro et du pickleball en France</li>
+          <li><strong>Tests & Avis</strong> : des analyses détaillées des raquettes et équipements</li>
+          <li><strong>Conseils</strong> : des techniques et stratégies pour progresser</li>
+          <li><strong>Guide débutant</strong> : tout pour bien commencer le pickleball</li>
+        </ul>
         <h2>Contact</h2>
         <p>
-          Une question, une suggestion ? Contactez-nous via nos reseaux sociaux ou par email.
+          Une question, une suggestion ? Contactez-nous par email à
+          <a href="mailto:contact@pickleballmania.fr">contact@pickleballmania.fr</a>.
         </p>
       </div>
     </main>

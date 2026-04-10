@@ -1,8 +1,9 @@
 ---
 title: "Test JOOLA Ben Johns Perseus 3 : la raquette vaut-elle son prix ?"
 description: "Test JOOLA Ben Johns Perseus 3 : construction, sensations, puissance et contrôle. La meilleure raquette de pickleball pour joueurs avancés en 2026 ?"
-pubDate: "2026-04-09"
+pubDate: "2026-04-06"
 category: "tests"
+heroImage: "../../assets/blog/tests/test-joola-ben-johns-perseus-3-la-raquette-vaut-el.webp"
 tags: ["JOOLA", "Perseus 3", "Ben Johns", "test raquette", "équipement"]
 draft: false
 ---
