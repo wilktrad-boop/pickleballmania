@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f public/fonts/atkinson-regular.woff public/fonts/atkinson-bold.woff)"
+    ]
+  }
+}
