@@ -3,7 +3,7 @@ title: "3 stratégies pour battre les joueurs classés 4.0 au pickleball"
 description: "Un pro noté 6.0 révèle les 3 failles tactiques des joueurs 4.0 au pickleball : couverture du milieu, déception et timing. Des armes concrètes pour franchir un cap."
 pubDate: "2026-04-17"
 category: "actualites"
-heroImage: "/images/actualites/strategies-battre-joueurs-4-0-pickleball.jpg"
+heroImage: "../../assets/blog/actualites/strategies-battre-joueurs-4-0-pickleball.jpg"
 tags: ["tactique pickleball","niveau 4.0","stratégie","progression","compétition"]
 draft: false
 ---
